@@ -9,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     body {
       margin: 0;
+      color: #121212;
     }
     
 `
@@ -23,6 +24,8 @@ export const theme = {
 
 export const FlexBox = styled.div`  
     display: flex;
+  justify-content: ${props => props.justify};
+  align-items: ${props => props.items};
 `
 
 export const FlexColum = styled(FlexBox)`  
@@ -33,5 +36,16 @@ export const Typography = styled.p`
     font-size: ${props => props.fontSize}px;
     font-weight: ${props => props.fontWeight};
     color: ${props => props.color};
+`
+
+export const Container = styled.div`
+  width: 85%;
+  margin: 52px auto;
+`
+
+export const StyledImage = styled.img`
+  max-width: 100%;
+  width: ${props => props.width};
+  height: ${props => props.height};
 `
 
