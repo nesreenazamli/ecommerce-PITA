@@ -13,6 +13,25 @@ export const GlobalStyle = createGlobalStyle`
     
 `
 
-export const FlexBox = styled.div`
+export const theme = {
+    pallete : {
+        black : "#000",
+        white: "#fff"
+
+    }
+}
+
+export const FlexBox = styled.div`  
     display: flex;
 `
+
+export const FlexColum = styled(FlexBox)`  
+    flex-direction: column;
+`
+
+export const Typography = styled.p`
+    font-size: ${props => props.fontSize}px;
+    font-weight: ${props => props.fontWeight};
+    color: ${props => props.color};
+`
+

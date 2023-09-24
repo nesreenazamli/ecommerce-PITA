@@ -1,6 +1,7 @@
 import React from 'react';
 import {FaTimes} from "react-icons/fa";
 import {StyledOffer, StyledOfferText} from "./Offer.Styled";
+import {Typography} from "../../App.Styled";
 
 function Offer({handelShow}) {
     return (
@@ -8,9 +9,9 @@ function Offer({handelShow}) {
           <StyledOfferText>
               70% off storewide — Limited time
           </StyledOfferText>
-            <p onClick={handelShow}>
+            <Typography onClick={handelShow}>
             <FaTimes/>
-            </p>
+            </Typography>
 
         </StyledOffer>
     );
