@@ -1,11 +1,15 @@
-import React from 'react';
-import Categories from "./Categories";
-import Shopbrands from "./Shopbrands";
+import React, {useState} from 'react';
+import Categories from "./components/Categories";
+import Shopbrands from "./components/Shopbrands";
+import Offer from "../../components/offer section/Offer";
 
 function HomePage(props) {
+    const [show, setShow] = useState(true)
+
     return (
         <>
-        <Categories/>
+            {show && <Offer handelShow={() => setShow((prev) => !prev)}/>}
+            <Categories/>
             <Shopbrands/>
         </>
     );

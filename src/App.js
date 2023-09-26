@@ -1,13 +1,18 @@
-import Offer from "./components/offer section/Offer";
+
 import {useState} from "react";
 import HomePage from "./pages/home page/HomePage";
+import {Route, Routes} from "react-router-dom";
+import Router from "./Router";
+import NavBar from "./components/nav bar/NavBar";
+import SignIn from "./pages/sign in/SignIn";
+
 
 function App() {
-    const [show, setShow] = useState(true)
   return (
     <div className="App">
-        {show && <Offer handelShow={() => setShow((prev) => !prev)} />}
-<HomePage/>
+        {/*<NavBar />*/}
+        {/*<Router />\*/}
+        <SignIn />
     </div>
   );
 }

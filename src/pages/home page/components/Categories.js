@@ -1,9 +1,9 @@
 import React from 'react';
-import {Container, StyledImage, Typography} from "../../App.Styled";
-import {CategoriesHeader, StyledCard, StyledCardWrapper} from "./Home.Styles";
+import {Container, StyledImage, Typography} from "../../../App.Styled";
+import {CategoriesHeader, StyledCard, StyledCardWrapper} from "../Home.Styles";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import itemImg from "../../assets/images/item.png"
-import splashImg from "../../assets/images/splash.png"
+import itemImg from "../../../assets/images/item.png"
+import splashImg from "../../../assets/images/splash.png"
 
 // Import Swiper styles
 import 'swiper/css';

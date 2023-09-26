@@ -1,9 +1,9 @@
 import React from 'react';
-import {Container, FlexBox, StyledImage, Typography} from "../../App.Styled";
-import {StyledShopContent, StyledShopImages} from "./Home.Styles";
+import {Container, FlexBox, StyledImage, Typography} from "../../../App.Styled";
+import {StyledShopContent, StyledShopImages} from "../Home.Styles";
 import {FaArrowRight} from "react-icons/fa";
-import brandImg1 from "../../assets/images/Logos.png"
-import brandImg2 from "../../assets/images/Logos.svg"
+import brandImg1 from "../../../assets/images/Logos.png"
+import brandImg2 from "../../../assets/images/Logos.svg"
 
 function Shopbrands(props) {
     return (
