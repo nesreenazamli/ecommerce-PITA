@@ -1,16 +1,15 @@
-import styled, {createGlobalStyle} from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
-
   * {
-    box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
+    box-sizing: border-box;    
+    font-family: 'Space Grotesk', sans-serif !important;
   }
 
   body {
     margin: 0;
     color: #121212;
+
   }
 
   .MuiButton-contained {
@@ -56,8 +55,8 @@ export const theme = {
 
 export const FlexBox = styled.div`  
     display: flex;
-  justify-content: ${props => props.justify};
-  align-items: ${props => props.items};
+    justify-content: ${props => props.justify};
+    align-items: ${props => props.items};
 `
 
 export const FlexColum = styled(FlexBox)`  
@@ -84,6 +83,9 @@ export const StyledImage = styled.img`
   width: ${props => props.width};
   height: ${props => props.height};
   margin: ${props => props.margin};
+  object-fit: cover;
+  
+  
 `
 export const StyledDel = styled("del")`
   color: #A7A7A7;
