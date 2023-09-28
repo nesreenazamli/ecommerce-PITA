@@ -1,18 +1,13 @@
 import React, {useState} from 'react';
-import {Container, FlexBox, FlexColum, StyledImage} from "../../App.Styled";
-import img from "../../assets/images/signin.png"
+import Layout from "../auth/layout";
+import {StyledError, StyledInput, StyledSignInWrapper, StyledWrapper} from "./SignIn.Styled";
 import {Alert, AlertTitle, Button, Typography} from "@mui/material";
 import Link from "@mui/material/Link";
-import {Formik, Form} from "formik";
-import {StyledError, StyledInput, StyledSignInWrapper, StyledWrapper} from "./SignIn.Styled";
-import {SigninSchema} from "../../validation";
-import Layout from "../auth/layout";
+import {Form, Formik} from "formik";
+import {FlexColum} from "../../App.Styled";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
 
-
-function SignIn({setUser}) {
-    const navigate = useNavigate();
+function Siginup(props) {
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
@@ -24,31 +19,32 @@ function SignIn({setUser}) {
         setIsLoading(true);
         try {
             // const response = await axios.get(`https://e-commerce-api-fylh.onrender.com/api/login?email=${values.name}&password=${values.password}`);
-            const response = await axios.post(`https://e-commerce-api-fylh.onrender.com/api/login`, values);
-            console.log(response.data.user);
+            const response = await axios.post(`https://e-commerce-api-fylh.onrender.com/api/register`, values);
+            console.log("test");
 
             // setUser(response.data);
 
             // Set user to localStorage
-            localStorage.setItem("user", JSON.stringify(response.data.user));
-            navigate("/");
-            setUser(response.data.user)
+            // localStorage.setItem("user", JSON.stringify(response.data));
+
             // history.push("/");
         } catch (e) {
-            console.log(e.response);
+            console.log(e.response.data.error);
+            setError(e.response.data.error)
         }
         setIsLoading(false);
     };
 
     return (
         <Layout>
-            {error && <Alert severity="error">
-                <AlertTitle>Error</AlertTitle>
-                {error}
-            </Alert> }
-            <StyledSignInWrapper>
-                <StyledWrapper>
 
+            <StyledSignInWrapper>
+
+                <StyledWrapper>
+                    {error && <Alert style={{width:"100%"}} severity="error">
+                        <AlertTitle>Error</AlertTitle>
+                        {error}
+                    </Alert> }
                     <Typography variant={"h5"} fontSize={"40px"} fontWeight={600}>Sign In</Typography>
                     <Typography margin={"20px 0"} variant={"body2"}>
                         Don’t have an accout yet? <Link fontWeight={600} href={"/"}>sign up</Link>
@@ -56,6 +52,7 @@ function SignIn({setUser}) {
 
                     <Formik
                         initialValues={{
+                            name:"",
                             email: "",
                             password: "",
                         }}
@@ -63,8 +60,12 @@ function SignIn({setUser}) {
                         // validationSchema={SigninSchema}
                     >
 
-                        {({errors,isSubmitting, handleSubmit,touched}) => (
+                        {({errors, handleSubmit,touched}) => (
                             <Form onSubmit={handleSubmit}>
+                                <FlexColum margin={"20px 0"}>
+                                    <StyledInput placeholder={"Your username or email"} name={"name"}/>
+                                    <StyledError name={"name"} component={"small"}/>
+                                </FlexColum>
                                 <FlexColum margin={"20px 0"}>
                                     <StyledInput placeholder={"Your username or email"} name={"email"}/>
                                     <StyledError name={"email"} component={"small"}/>
@@ -74,8 +75,8 @@ function SignIn({setUser}) {
                                     <StyledError name={"password"} component={"small"}/>
                                 </FlexColum>
 
-                                <Button type={"submit"} disabled={isSubmitting} variant="contained" fullWidth={true}>
-                                    Sign in
+                                <Button type={"submit"} disabled={isLoading} variant="contained" fullWidth={true}>
+                                    Sign up
                                 </Button>
                             </Form>
 
@@ -84,8 +85,7 @@ function SignIn({setUser}) {
                 </StyledWrapper>
             </StyledSignInWrapper>
         </Layout>
-
     );
 }
 
-export default SignIn;
+export default Siginup;

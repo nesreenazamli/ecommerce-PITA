@@ -17,23 +17,14 @@ export const GlobalStyle = createGlobalStyle`
     color: #fff !important;
     background: #121212 !important;
     border-radius: 6px;
-    //width: 100% !important;
-    
+    text-transform: capitalize !important;
+
+    &:disabled {
+      background: #828282 !important;
+    }
+
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 
   //  MUI styling
 
@@ -84,6 +75,7 @@ export const StyledImage = styled.img`
   width: ${props => props.width};
   height: ${props => props.height};
   margin: ${props => props.margin};
+  object-fit: cover;
 `
 export const StyledDel = styled("del")`
   color: #A7A7A7;

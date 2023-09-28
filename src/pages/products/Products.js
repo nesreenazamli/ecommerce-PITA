@@ -1,11 +1,30 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {StyledProductsWrapper} from "./Products.Syled";
 import {Breadcrumbs, Typography} from "@mui/material";
 import Link from '@mui/material/Link';
 import {Container} from "../../App.Styled";
 import ProductCard from "../../components/product cad/ProductCard";
+import axios from "axios";
 
-function Products(props) {
+function Products() {
+    const [prod, setProd] = useState([]);
+
+    const getPoducts = async () => {
+        try{
+            const response = await axios.get("https://e-commerce-api-fylh.onrender.com/api/products");
+            console.log(response.data)
+
+            setProd(response.data)
+        }catch (e) {
+            console.log(e)
+        }
+
+    }
+
+    useEffect(() => {
+        getPoducts();
+    }, []);
+
     const breadcrumbs = [
         <Link underline="hover" key="1" color="inherit" href="/">
             Home
@@ -41,8 +60,17 @@ function Products(props) {
                     All products
                 </Typography>
 
-                <ProductCard />
 
+                {prod?.map((item)=>
+                    <ProductCard
+                        description={item.description}
+                        price={item.price}
+                        productImage={item.thumbnail}
+                        rate={item.rate}
+                        productName={item.name}
+                        discount={item.discount}
+                    />
+                )}
 
             </Container>
         </>

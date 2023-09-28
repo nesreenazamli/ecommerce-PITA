@@ -3,22 +3,23 @@ import {FlexBox, StyledDel, StyledImage} from "../../App.Styled";
 import {Button, CardContent, Rating, Typography} from "@mui/material";
 import img from "../../assets/images/item.png";
 
-function ProductCard({productImage, productName, price, prevPrice, rate, description}) {
+function ProductCard({productImage, productName,discount,  price, prevPrice, rate, description}) {
+    const currentPrice = price - price * (discount / 100 )
     return (
         <FlexBox>
-            <StyledImage src={img} />
+            <StyledImage width={"200px"} src={productImage} />
 
             <CardContent>
-                <Typography>{productName}test</Typography>
+                <Typography>{productName}</Typography>
                 <FlexBox items={"center"}>
-                    <Typography variant={"h6"}>{price}$56</Typography>
-                    <StyledDel>{prevPrice}$22</StyledDel>
+                    <Typography variant={"h6"}>${currentPrice.toFixed(2)}</Typography>
+                    <StyledDel>${price}</StyledDel>
                 </FlexBox>
 
-                <Rating name="read-only" value={2.5} readOnly />
+                <Rating name="read-only" value={rate} readOnly />
 
                 <Typography variant={"body2"}>
-                    {description} bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+                    {description}
                 </Typography>
 
                 <Button variant="contained" fullWidth={true}>

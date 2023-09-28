@@ -4,11 +4,12 @@ import Shopbrands from "./components/Shopbrands";
 import Offer from "../../components/offer section/Offer";
 
 function HomePage(props) {
-    const [show, setShow] = useState(true)
+
+    // const [show, setShow] = useState(true)
 
     return (
         <>
-            {show && <Offer handelShow={() => setShow((prev) => !prev)}/>}
+            {/*{show && <Offer handelShow={() => setShow((prev) => !prev)}/>}*/}
             <Categories/>
             <Shopbrands/>
         </>
