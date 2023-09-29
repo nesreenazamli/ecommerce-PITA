@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import productheroimag from "../../assets/images//producthead.png"
-
+import productheroimag from "../../assets/images//producthead.png";
 
 export const StyledProductsWrapper = styled.div`
   background: no-repeat url(${productheroimag});
@@ -12,5 +11,12 @@ export const StyledProductsWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
 
-`
+export const StyledProductContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+`;

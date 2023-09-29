@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
   * {
-    box-sizing: border-box;    
+    box-sizing: border-box;
     font-family: 'Space Grotesk', sans-serif !important;
   }
 
@@ -11,28 +11,24 @@ export const GlobalStyle = createGlobalStyle`
     color: #121212;
 
   }
+  
+  img {
+    max-width: 100%;
+  }
 
   .MuiButton-contained {
     color: #fff !important;
     background: #121212 !important;
     border-radius: 6px;
+    text-transform: capitalize !important;
     //width: 100% !important;
-    
+
+    &:disabled {
+      background: #716f6f !important;
+    }
+
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
 
   //  MUI styling
 

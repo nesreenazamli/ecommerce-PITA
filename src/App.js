@@ -10,9 +10,9 @@ import SignIn from "./pages/auth/sign in/SignIn";
 function App() {
   return (
     <div className="App">
-        {/*<NavBar />*/}
-        {/*<Router />\*/}
-        <SignIn />
+        <NavBar />
+        <Router />
+        {/*<SignIn />*/}
     </div>
   );
 }
