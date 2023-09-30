@@ -13,12 +13,12 @@ export const StyledHeaderContent = styled(FlexBox)`
   align-items: center;
 `;
 export const StyledLogoImg = styled.div`
-width: 155px;
-height: 30px;
-  @media screen  and (max-width: 700px){
-    width: 114px;
-    height: 22px;
-}
+//width: 155px;
+//height: 30px;
+//  @media screen  and (max-width: 700px){
+//    width: 114px;
+//    height: 22px;
+//}
 `;
 export const StyledLink = styled(Link)`
   margin: 0 20px;

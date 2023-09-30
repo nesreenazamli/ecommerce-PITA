@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {FlexBox} from "../../App.Styled";
 
 export const StyledOffer = styled(FlexBox)`
-    background: ${props => props.theme.pallete.black};
+    background: #000;
     color: ${props => props.theme.pallete.white};
     padding: 0 2%;
     text-align: center;

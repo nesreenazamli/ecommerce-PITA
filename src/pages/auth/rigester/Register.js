@@ -9,7 +9,7 @@ import {
 import { Alert, Button, Typography } from "@mui/material";
 import Link from "@mui/material/Link";
 import { Form, Formik } from "formik";
-import { FlexColum } from "../../../App.Styled";
+import { FlexColumn } from "../../../App.Styled";
 import { SigninSchema } from "../../../validation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -59,21 +59,21 @@ function Register() {
           >
             {({ errors, handleSubmit, isSubmitting, touched }) => (
               <Form>
-                <FlexColum margin={"20px 0"}>
+                <FlexColumn margin={"20px 0"}>
                   <StyledInput placeholder={"Your username"} name={"name"} />
                   {/*{isSubmitting && <StyledError name={"name"} component={"small"}/>}*/}
                   {errors.name && touched.name ? (
                     <div>{errors.name}</div>
                   ) : null}
-                </FlexColum>
-                <FlexColum margin={"20px 0"}>
+                </FlexColumn>
+                <FlexColumn margin={"20px 0"}>
                   <StyledInput placeholder={"Your email"} name={"email"} />
                   <StyledError name={"email"} component={"small"} />
-                </FlexColum>
-                <FlexColum margin={"0 0 20px 0"}>
+                </FlexColumn>
+                <FlexColumn margin={"0 0 20px 0"}>
                   <StyledInput placeholder={"Password"} name={"password"} />
                   <StyledError name={"password"} component={"small"} />
-                </FlexColum>
+                </FlexColumn>
 
                 <Button
                   type={"submit"}

@@ -1,21 +1,31 @@
-import React, { useState } from "react";
-import Categories from "./components/Categories";
-import Shopbrands from "./components/Shopbrands";
-import Offer from "../../components/offer section/Offer";
+import React from "react";
+import Layout from "../main layout/Layout";
+import Hero from "./components/hero/Hero";
+import Category from "./components/category/Category";
+import Banner from "./components/banner/Banner";
+import LastAdditionsProduct from "./components/lastestAddition/LastAdditionsProduct";
+import Brand from "./components/brands/Brand";
+import Feature from "./components/feature/Feature";
+import NewsLetter from "./components/newsLetter/NewsLetter";
+import Instagram from "./components/instagram/Instagram";
 
-function HomePage(props) {
-  const [show, setShow] = useState(true);
+function HomePage() {
   const userData = JSON.parse(localStorage.getItem("user"));
 
   console.log(userData, "userData");
 
   return (
-    <>
-      {show && <Offer handelShow={() => setShow((prev) => !prev)} />}
-      Hello, {userData?.name}
-      <Categories />
-      <Shopbrands />
-    </>
+      <Layout>
+        <Hero />
+        <Category />
+        <Banner />
+        <LastAdditionsProduct />
+        <Brand />
+        <Feature />
+        <NewsLetter />
+        <Instagram />
+      </Layout>
+
   );
 }
 
