@@ -4,8 +4,9 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     font-family: 'Space Grotesk', sans-serif !important;
+    text-decoration: none !important;
   }
-
+  
   body {
     margin: 0;
     color: #121212;
@@ -53,9 +54,10 @@ export const FlexBox = styled.div`
     display: flex;
     justify-content: ${props => props.justify};
     align-items: ${props => props.items};
+  width: ${props => props.width};;
 `
 
-export const FlexColum = styled(FlexBox)`  
+export const FlexColumn = styled(FlexBox)`  
     flex-direction: column;
   justify-content: ${props => props.justify};
   align-items: ${props => props.items};
@@ -70,7 +72,7 @@ export const Typography = styled.p`
 `
 
 export const Container = styled.div`
-  width: 85%;
+  width: 90%;
   margin: 0 auto;
 `
 

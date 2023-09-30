@@ -33,9 +33,9 @@ function Products(props) {
     }
   };
 
-  useEffect(() => {
-    getallProducts();
-  }, []);
+  // useEffect(() => {
+  //   getallProducts();
+  // }, []);
   return (
     <>
       <StyledProductsWrapper>

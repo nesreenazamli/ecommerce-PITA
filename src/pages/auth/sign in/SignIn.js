@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FlexColum } from "../../../App.Styled";
+import { FlexColumn } from "../../../App.Styled";
 import { Alert, Button, Typography } from "@mui/material";
 import Link from "@mui/material/Link";
 import { Formik, Form } from "formik";
@@ -58,17 +58,17 @@ function SignIn() {
           >
             {({ isSubmitting }) => (
               <Form>
-                <FlexColum margin={"20px 0"}>
+                <FlexColumn margin={"20px 0"}>
                   <StyledInput
                     placeholder={"Your username or email"}
                     name={"email"}
                   />
                   <StyledError name={"email"} component={"small"} />
-                </FlexColum>
-                <FlexColum margin={"0 0 20px 0"}>
+                </FlexColumn>
+                <FlexColumn margin={"0 0 20px 0"}>
                   <StyledInput placeholder={"Password"} name={"password"} />
                   <StyledError name={"password"} component={"small"} />
-                </FlexColum>
+                </FlexColumn>
                 <Button
                   type={"submit"}
                   disabled={isSubmitting}

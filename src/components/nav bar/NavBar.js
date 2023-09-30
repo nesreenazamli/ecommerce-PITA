@@ -16,6 +16,7 @@ import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaUser } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { IoExitOutline } from "react-icons/io5";
+import {Typography} from "@mui/material";
 
 function NavBar() {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -31,6 +32,7 @@ function NavBar() {
               {/*    alt=""*/}
               {/*    srcSet=""*/}
               {/*/>*/}
+              <Typography variant={"h6"}>Shop</Typography>
             </StyledLogoImg>
             <StyledNav>
               <StyledLink to={"/"}>Home</StyledLink>
@@ -40,9 +42,9 @@ function NavBar() {
             <FlexBox align="center">
               <StyledIcon>
                 <AiOutlineSearch size={"24px"} />
-                <Link to={user ? "/profile" : "/login"}>
-                  <FaUser size={"24px"} />
-                </Link>
+                <StyledLink to={user ? "/profile" : "/login"}>
+                  <FaUser size={""} />
+                </StyledLink>
               </StyledIcon>
               <IoExitOutline
                 onClick={() => {
