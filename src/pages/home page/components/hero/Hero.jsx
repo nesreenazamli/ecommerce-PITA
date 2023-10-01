@@ -1,7 +1,7 @@
 import heroImg from '../../../../assets/images/Hero.png'
 import { Container, FlexBox, StyledImage, Typography } from '../../../../App.Styled';
-import Button from '../button/Button';
 import { HeroTitle, StyledHero } from './Hero.styled';
+import {Button} from "@mui/material";
 
 const Hero = () => {
   return (

@@ -13,19 +13,28 @@ import { SigninSchema } from "../../../validation";
 import AuthLayout from "../AuthLayout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {loginAction} from "../../../redux/action/action";
+
 
 function SignIn() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handelSignIn = async (values) => {
     setError("");
     try {
       const response = await axios.post(
-        "https://e-commerce-api-fylh.onrender.com/api/login",
+        "https://e-commerce-api-dev.onrender.com/api/login",
         values
       );
-      navigate("/");
+
+      dispatch(loginAction(response.data.user))
+
       localStorage.setItem("user", JSON.stringify(response.data.user));
+
+      navigate("/");
 
       console.log(response.data.user, "response.data");
     } catch (e) {
