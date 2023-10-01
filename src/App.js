@@ -9,11 +9,7 @@ import SignIn from "./pages/auth/sign in/SignIn";
 
 function App() {
   return (
-
-
         <Router />
-
-
   );
 }
 

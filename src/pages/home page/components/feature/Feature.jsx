@@ -1,9 +1,7 @@
 import feature from "../../../../assets/images/Feature.png"
 import {Container, FlexBox, StyledImage} from "../../../../App.Styled";
 import {Typography} from "@mui/material";
-import Button from "../button/Button";
-
-
+import {Button} from "@mui/material";
 
 function Feature() {
     return (

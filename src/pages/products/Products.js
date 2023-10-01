@@ -24,7 +24,7 @@ function Products(props) {
   const getallProducts = async () => {
     try {
       const response = await axios.get(
-        "https://e-commerce-api-fylh.onrender.com/api/products"
+        "https://e-commerce-api-dev.onrender.com/api/products"
       );
       setAllProducts(response.data);
       console.log(response.data, "response");
@@ -33,9 +33,11 @@ function Products(props) {
     }
   };
 
-  // useEffect(() => {
-  //   getallProducts();
-  // }, []);
+
+
+  useEffect(() => {
+    getallProducts();
+  }, []);
   return (
     <>
       <StyledProductsWrapper>
@@ -59,6 +61,7 @@ function Products(props) {
         <StyledProductContainer>
           {allproducts.map((item) => (
             <ProductCard
+              id={item.id}
               productName={item.name}
               rate={item.rate}
               productImage={item.thumbnail}

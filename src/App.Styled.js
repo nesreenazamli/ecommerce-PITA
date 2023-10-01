@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
   }
-
+  
 
   //  MUI styling
 

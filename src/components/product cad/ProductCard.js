@@ -2,6 +2,7 @@ import React from "react";
 import { FlexBox, StyledDel, StyledImage } from "../../App.Styled";
 import { Button, CardContent, Rating, Typography } from "@mui/material";
 import { StyledProductCard } from "./ProductCard.Styled";
+import {useNavigate} from "react-router-dom";
 
 function ProductCard({
   productImage,
@@ -10,12 +11,13 @@ function ProductCard({
   discount,
   rate,
   description,
+    id
 }) {
   const newPrice = price - price * (discount / 100);
+  const navigate = useNavigate()
   return (
-    <StyledProductCard>
-      <StyledImage width={"150px"} height={"200px"} src={productImage} />
-
+    <StyledProductCard >
+      <StyledImage width={"150px"} height={"200px"} src={productImage} onClick={() => navigate(`/product/${id}`)} />
       <CardContent>
         <Typography>{productName}</Typography>
         <FlexBox items={"center"}>

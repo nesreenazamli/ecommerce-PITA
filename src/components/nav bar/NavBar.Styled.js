@@ -30,7 +30,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const StyledIcon = styled(FlexBox)`
-width: 70px;
+//width: 70px;
 align-items: center;
 justify-content: space-between;
 margin-right: 20px;

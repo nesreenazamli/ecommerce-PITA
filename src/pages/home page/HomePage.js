@@ -1,21 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 import Layout from "../main layout/Layout";
-import Hero from "./components/hero/Hero";
-import Category from "./components/category/Category";
-import Banner from "./components/banner/Banner";
-import LastAdditionsProduct from "./components/lastestAddition/LastAdditionsProduct";
-import Brand from "./components/brands/Brand";
-import Feature from "./components/feature/Feature";
-import NewsLetter from "./components/newsLetter/NewsLetter";
-import Instagram from "./components/instagram/Instagram";
+import {Banner, Brand, Category, Feature, Hero, Instagram, LastAdditionsProduct, NewsLetter, Offer} from "./index";
 
 function HomePage() {
   const userData = JSON.parse(localStorage.getItem("user"));
+  const [show, setShow] = useState(true)
 
   console.log(userData, "userData");
 
   return (
-      <Layout>
+      <>
+          {show && <Offer handleShow={(prev) => setShow(!prev)} />}
+
+          <Layout>
         <Hero />
         <Category />
         <Banner />
@@ -25,7 +22,7 @@ function HomePage() {
         <NewsLetter />
         <Instagram />
       </Layout>
-
+</>
   );
 }
 
