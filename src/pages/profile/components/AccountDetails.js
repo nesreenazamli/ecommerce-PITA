@@ -1,19 +1,41 @@
 import { Form, Formik } from "formik";
 
 import { StyledError } from "../../auth/Auth.Styled";
-import { Button, Typography } from "@mui/material";
-import { FlexColumn } from "../../../App.Styled";
+import { Button, CircularProgress, Typography } from "@mui/material";
+import { FlexBox, FlexColumn } from "../../../App.Styled";
 import { StyledInputProfile } from "../Profile.Styled";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getUserById } from "../../../redux/action/action";
 
 const AccountDetails = () => {
+  const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem("user"));
+  const userData = useSelector(state => state.UserReducer.profile);
+  const isLoading = useSelector(state => state.UserReducer.loading);
+
+  console.log(userData, "userData");
+
+  useEffect(() => {
+    dispatch(getUserById(user.id))
+   
+  }, [])
+  
   return (
     <div style={{ width:"60%" }}>
+
+      {isLoading ? 
+
+      <FlexBox items="center" justify="center">
+         <CircularProgress color="inherit" /> :   
+      </FlexBox>
+       : 
       <Formik
         initialValues={{
           first_name: "",
           last_name: "",
-          user_name: "",
-          email: "",
+          user_name: userData.name,
+          email: userData.email,
           old_password: "",
           new_password: "",
           reset_password: "",
@@ -112,10 +134,10 @@ const AccountDetails = () => {
               </Typography>
             </FlexColumn>
 
-            <Button text="Submit" />
+            <Button text="Submit" variant="contained">Submit</Button>
           </Form>
         )}
-      </Formik>
+      </Formik>  }
     </div>
   );
 };

@@ -8,6 +8,7 @@ import Product from "./pages/products/Product";
 import Profile from "./pages/profile/Profile";
 import AccountDetails from "./pages/profile/components/AccountDetails";
 import Orders from "./pages/profile/components/Orders";
+import Dashboard from "./pages/profile/components/Dashboard";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path="/profile" element={<Profile />}>
         <Route path="details" element={<AccountDetails />} />
         <Route path="orders" element={<Orders />} />
+        <Route index path="/profile" element={<Dashboard />} />
       </Route>
     </Routes>
   );
