@@ -1,11 +1,9 @@
 import React from "react";
 import { Container, FlexBox } from "../../App.Styled";
 import {
-  StyledCart,
   StyledLogoImg,
   StyledHeader,
   StyledLink,
-  StyledIcon,
   StyledHeaderContent,
   StyledNav,
   StyledMenuIcon,
@@ -14,18 +12,13 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { IoExitOutline } from "react-icons/io5";
 import {Typography} from "@mui/material";
-import {useSelector} from "react-redux";
 
 function NavBar() {
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
-
-  const userData = useSelector((state) => state.UserReducer.user);
-
-  console.log(userData, "userData")
 
   return (
     <div className="header">
@@ -33,17 +26,12 @@ function NavBar() {
         <Container>
           <StyledHeaderContent>
             <StyledLogoImg>
-              {/*<img*/}
-              {/*    src={require("../../assets/Branding.png")}*/}
-              {/*    alt=""*/}
-              {/*    srcSet=""*/}
-              {/*/>*/}
-              <Typography variant={"h6"}>Shop</Typography>
+             <Link to="/"><Typography color={"#000"} variant={"h6"}>Shop</Typography></Link> 
             </StyledLogoImg>
             <StyledNav>
               <StyledLink to={"/"}>Home</StyledLink>
               <StyledLink to={"/products"}>Products</StyledLink>
-              <StyledLink to={"/category"}>Category</StyledLink>
+              <StyledLink to={"/category"}>Categories</StyledLink>
             </StyledNav>
             <FlexBox align="center">
               {/*<StyledIcon>*/}

@@ -2,13 +2,14 @@ import { CategorySliderStyled } from './Category.styled';
 import SliderCardCategory from './SliderCardCategory';
 import {Container, FlexBox} from "../../../../App.Styled";
 import {Typography} from "@mui/material";
+import { Link } from 'react-router-dom';
 
 const Category = () => {
   return (
-    <Container margin='114px 52px'>
-      <FlexBox items='center' justify='space-between'>
+    <Container>
+      <FlexBox items='center' justify='space-between' margin="52px 0 0 0">
         <Typography fontSize='34px' fontWeight={500}>Categories</Typography>
-        <Typography fontSize='18px' fontWeight={500}>See all categories</Typography>
+        <Link to={"/category"}><Typography color={"#000"} borderBottom={"1px solid"} fontWeight={500} fontSize='25px'>See all categories</Typography></Link>
       </FlexBox>
 
       <CategorySliderStyled>

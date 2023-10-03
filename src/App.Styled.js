@@ -54,7 +54,8 @@ export const FlexBox = styled.div`
     display: flex;
     justify-content: ${props => props.justify};
     align-items: ${props => props.items};
-  width: ${props => props.width};;
+  width: ${props => props.width};
+  margin:${props => props.margin};
 `
 
 export const FlexColumn = styled(FlexBox)`  
@@ -81,7 +82,7 @@ export const StyledImage = styled.img`
   width: ${props => props.width};
   height: ${props => props.height};
   margin: ${props => props.margin};
-  object-fit: cover;
+  object-fit: ${props => props.fit ? props.fit : "cover" };
   
   
 `

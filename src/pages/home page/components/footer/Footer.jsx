@@ -1,63 +1,85 @@
-import { Container, FlexBox, Typography } from "../../../../App.Styled"
-import { TbBrandFacebook } from 'react-icons/tb'
-import { CiInstagram } from 'react-icons/ci'
-import { SlSocialTwitter } from 'react-icons/sl'
-import { AiOutlineMail } from 'react-icons/ai'
-// import { Link, NavLink } from "react-router-dom"
-import { AboutUsStyled,
-        InformationStyled, 
-        CompanyStyled, 
-        ListStyled, 
-        SocialIconStyled,
-        LinkListStyled,
-        ItemLinkStyled
-} from './Footer.styled'
-
+import React from "react";
+import { FaInstagram } from "react-icons/fa";
+import { FiFacebook, FiTwitter } from "react-icons/fi";
+import { HiOutlineMail } from "react-icons/hi";
+import { Link } from "react-router-dom";
+import { Container } from "../../../../App.Styled";
+import {
+  FooterContainer,
+  FooterIconWrapper,
+  FooterLeftDescription,
+  FooterLeftSocialWrapper,
+  FooterLeftTitle,
+  FooterLink,
+  FooterLinksTitle,
+  FooterLinksWrapper,
+  FooterWrapper,
+  FooterWrapperLeft,
+  FooterWrapperRight,
+} from "./Footer.styled";
 
 const Footer = () => {
   return (
-    <Container margin='72px 52px'>
-        <FlexBox items='center' justify='space-between'>
-            <AboutUsStyled>
-                <Typography fontSize='34px' fontWeight={500}>About us</Typography>
-                <Typography color='#605F5F' margin='28px 0'>Experience the future of e-commerce design with<br  /> SHOPR. Limitless design possibilities.</Typography>
-                <SocialIconStyled gap='25px'>
-                    <TbBrandFacebook />
-                    <CiInstagram />
-                    <SlSocialTwitter />
-                    <AiOutlineMail />
-                </SocialIconStyled>
-            </AboutUsStyled>
+    <FooterWrapper>
+      <Container>
+        <FooterContainer>
+          <FooterWrapperLeft>
+            <FooterLeftTitle>About us</FooterLeftTitle>
+            <FooterLeftDescription>
+              Experience the future of e-commerce design with SHOPR. Limitless
+              design possibilities.
+            </FooterLeftDescription>
+            <FooterLeftSocialWrapper>
+              <FooterIconWrapper to={"/"}>
+                <FiFacebook />
+              </FooterIconWrapper>
+              <FooterIconWrapper to={"/#"}>
+                <FaInstagram />
+              </FooterIconWrapper>
+              <FooterIconWrapper to={"/#"}>
+                <FiTwitter />
+              </FooterIconWrapper>
+              <FooterIconWrapper to={"/#"}>
+                <HiOutlineMail />
+              </FooterIconWrapper>
+            </FooterLeftSocialWrapper>
+          </FooterWrapperLeft>
+          <FooterWrapperRight>
+            <FooterLinksWrapper>
+              <FooterLinksTitle>Information</FooterLinksTitle>
+              <FooterLink>
+                <Link>Shipping Policy</Link>
+              </FooterLink>
+              <FooterLink>
+                <Link>Returns & Refunds</Link>
+              </FooterLink>
+              <FooterLink>
+                <Link>Contact Us</Link>
+              </FooterLink>
+              <FooterLink>
+                <Link>Frequently asked</Link>
+              </FooterLink>
+            </FooterLinksWrapper>
+            <FooterLinksWrapper>
+              <FooterLinksTitle>Company</FooterLinksTitle>
+              <FooterLink>
+                <Link>About Us</Link>
+              </FooterLink>
+              <FooterLink>
+                <Link>Privacy Policy</Link>
+              </FooterLink>
+              <FooterLink>
+                <Link>Terms & Conditions</Link>
+              </FooterLink>
+              <FooterLink>
+                <Link>Cookie Policy</Link>
+              </FooterLink>
+            </FooterLinksWrapper>
+          </FooterWrapperRight>
+        </FooterContainer>
+      </Container>
+    </FooterWrapper>
+  );
+};
 
-            <ListStyled justify='space-between'>
-            <InformationStyled>
-                <Typography fontSize='14px' fontWeight={500} margin='0 0 16px'>Information</Typography>
-                <LinkListStyled>
-                    <ItemLinkStyled to='/'>Shipping Policy</ItemLinkStyled>
-                    <ItemLinkStyled to='/'>Returns & Refunds</ItemLinkStyled>
-                    <ItemLinkStyled to='/'>Contact Us</ItemLinkStyled>
-                    <ItemLinkStyled to='/'>Frequently asked</ItemLinkStyled>
-
-                </LinkListStyled>
-            </InformationStyled>
-
-            <CompanyStyled>
-            <Typography fontSize='14px' fontWeight={500} margin='0 0 16px'>Company</Typography>
-                <LinkListStyled>
-                    <ItemLinkStyled to='/'>About Us</ItemLinkStyled>
-                    <ItemLinkStyled to='/'>Privacy Policy</ItemLinkStyled>
-                    <ItemLinkStyled to='/'>Terms & Conditions</ItemLinkStyled>
-                    <ItemLinkStyled to='/'>Cookie Policy</ItemLinkStyled>
-
-                </LinkListStyled>
-            </CompanyStyled>
-
-
-            </ListStyled>
-        </FlexBox>
-
-    </Container>
-  )
-}
-
-export default Footer
+export default Footer;

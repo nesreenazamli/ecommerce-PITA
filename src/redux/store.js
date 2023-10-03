@@ -3,7 +3,7 @@ import {UserReducer} from "./reducers/reducer"
 import thunk from "redux-thunk";
 
 const reducers = combineReducers({
-    UserReducer,
+ UserReducer,
 })
 
 const middlewares = [thunk]

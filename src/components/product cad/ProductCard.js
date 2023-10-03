@@ -17,7 +17,7 @@ function ProductCard({
   const navigate = useNavigate()
   return (
     <StyledProductCard >
-      <StyledImage width={"150px"} height={"200px"} src={productImage} onClick={() => navigate(`/product/${id}`)} />
+      <StyledImage fit={"unset"} width={"200px"} height={"200px"} src={productImage} onClick={() => navigate(`/product/${id}`)} />
       <CardContent>
         <Typography>{productName}</Typography>
         <FlexBox items={"center"}>
@@ -27,7 +27,7 @@ function ProductCard({
 
         <Rating name="read-only" value={rate} readOnly />
 
-        <Typography variant={"body2"}>{description}</Typography>
+        <Typography variant={"body2"} margin={"0 0 10px 0"}>{description}</Typography>
 
         <Button variant="contained" fullWidth={true}>
           Add to cart

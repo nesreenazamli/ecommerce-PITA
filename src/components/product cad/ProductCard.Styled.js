@@ -6,5 +6,6 @@ export const CardContent = styled.div`
 `;
 
 export const StyledProductCard = styled(FlexBox)`
-  width: 32%;
+  width: 48%;
+  margin: 20px 0;
 `;
