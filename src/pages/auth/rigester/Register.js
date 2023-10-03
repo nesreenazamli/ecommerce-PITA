@@ -13,24 +13,16 @@ import { FlexColumn } from "../../../App.Styled";
 import { SigninSchema } from "../../../validation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 function Register() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch;
 
   const handelRegiter = async (values) => {
-    setError("");
-    try {
-      const response = await axios.post(
-        "https://e-commerce-api-fylh.onrender.com/api/register",
-        values
-      );
-      navigate("/login");
-      console.log(response, "response.data");
-    } catch (e) {
-      console.log(e.response.data.error, "error");
-      setError(e.response.data.error);
-    }
+    dispatch(registerAction(values, navigate))
+
   };
 
   return (

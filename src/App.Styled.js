@@ -72,7 +72,7 @@ export const Typography = styled.p`
 `
 
 export const Container = styled.div`
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
 `
 
