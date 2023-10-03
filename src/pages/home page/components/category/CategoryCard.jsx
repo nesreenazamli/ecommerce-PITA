@@ -1,16 +1,16 @@
-// import Category1 from '../../assets/Category1.png'
-import { FlexColumn, StyledImage, Typography } from '../../../../App.Styled'
-import { CategoryCardImg } from './Category.styled'
+import { Typography } from '@mui/material';
+import {  StyledImage } from '../../../../App.Styled'
+import { CategoryCardImg, CategoryCardWrapper } from './Category.styled'
 
-const CategoryCard = ({ item }) => {
+const CategoryCard = ({ item, width }) => {
   const { name, thumbnail } = item;
   return (
-    <FlexColumn >
+    <CategoryCardWrapper width={width}>
       <CategoryCardImg>
-        <StyledImage width='100%' height='100%' radius='20px' src={thumbnail} alt='' />
+        <StyledImage width='100%' height='100%' fit='contain' src={thumbnail} alt='' />
       </CategoryCardImg>
-        <Typography textalign='center' fontSize='18px' fontWeight={500}>{ name }</Typography>
-    </FlexColumn>
+        <Typography textAlign='center' fontSize='18px' margin={"10px 0 50px 0"} fontWeight={500}>{ name }</Typography>
+    </CategoryCardWrapper>
   )
 }
 

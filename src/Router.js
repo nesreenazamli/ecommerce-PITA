@@ -9,6 +9,7 @@ import Profile from "./pages/profile/Profile";
 import AccountDetails from "./pages/profile/components/AccountDetails";
 import Orders from "./pages/profile/components/Orders";
 import Dashboard from "./pages/profile/components/Dashboard";
+import Categories from "./pages/categories/Categories";
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
       <Route path="/login" element={<SignIn />}></Route>
       <Route path="/register" element={<Register />}></Route>
       <Route path="/products" element={<Products />}></Route>
+      <Route path="/category" element={<Categories />}></Route>
       <Route path="/product/:id" element={<Product />} />
       <Route path="/profile" element={<Profile />}>
         <Route path="details" element={<AccountDetails />} />
