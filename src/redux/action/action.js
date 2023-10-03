@@ -1,5 +1,5 @@
 import axios from "axios";
-import { USER_LOGIN_FAILED, USER_LOGIN_START, USER_LOGIN_SUCCESS, USER_REGISTER_START,USER_REGISTER_SUCCESS} from "../types/Types";
+import { USER_LOGIN_FAILED, USER_LOGIN_START, USER_LOGIN_SUCCESS, USER_REGISTER_START,USER_REGISTER_SUCCESS,USER_REGISTER_FAILED} from "../types/Types";
 
 export const loginAction = (userData, navigate) => {
     return async (dispatch) => {
@@ -57,7 +57,7 @@ export const registerAction =(values, navigate) => {
 
             dispatch({
                 type:USER_REGISTER_FAILED,
-                payload: e.response.data.error
+                payload: error.response.data.error
               })
 
         }
