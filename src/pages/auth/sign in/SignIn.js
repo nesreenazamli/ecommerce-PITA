@@ -13,35 +13,20 @@ import { SigninSchema } from "../../../validation";
 import AuthLayout from "../AuthLayout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {loginAction} from "../../../redux/action/action";
 
 
 function SignIn() {
-  const [error, setError] = useState("");
+  const error = useSelector(state=> state.UserReducer.error)
+  console.log(error, "ffffff");
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handelSignIn = async (values) => {
-    setError("");
-    try {
-      const response = await axios.post(
-        "https://e-commerce-api-dev.onrender.com/api/login",
-        values
-      );
-
-      dispatch(loginAction(response.data.user))
-
-      localStorage.setItem("user", JSON.stringify(response.data.user));
-
-      navigate("/");
-
-      console.log(response.data.user, "response.data");
-    } catch (e) {
-      console.log(e.response.data.error, "error");
-      setError(e.response.data.error);
-    }
+    dispatch(loginAction(values, navigate))
   };
+
   return (
     <AuthLayout>
       <StyledSignInWrapper>
@@ -51,7 +36,7 @@ function SignIn() {
             Sign In
           </Typography>
           <Typography margin={"20px 0"} variant={"body2"}>
-            Don’t have an accout yet?{" "}
+            Don’t have an accout yet?
             <Link fontWeight={600} href={"/register"}>
               sign up
             </Link>

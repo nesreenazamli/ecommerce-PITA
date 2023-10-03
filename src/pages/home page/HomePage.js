@@ -1,18 +1,18 @@
 import React, {useState} from "react";
 import Layout from "../main layout/Layout";
 import {Banner, Brand, Category, Feature, Hero, Instagram, LastAdditionsProduct, NewsLetter, Offer} from "./index";
+import { useSelector } from "react-redux";
 
 function HomePage() {
-  const userData = JSON.parse(localStorage.getItem("user"));
   const [show, setShow] = useState(true)
 
-  console.log(userData, "userData");
+  console.log(useSelector(state=>state), "state");
 
   return (
       <>
           {show && <Offer handleShow={(prev) => setShow(!prev)} />}
 
-          <Layout>
+        <Layout>
         <Hero />
         <Category />
         <Banner />
