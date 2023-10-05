@@ -14,7 +14,7 @@ import { SigninSchema } from "../../../validation";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { registerAction } from "../../../redux/action/action";
+import { registerAction } from "../../../redux/action/userAction";
 
 function Register() {
   const [error, setError] = useState("");

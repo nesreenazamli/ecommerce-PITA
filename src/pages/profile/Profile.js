@@ -1,14 +1,26 @@
 import React, { useEffect } from "react";
 import Layout from "../main layout/Layout";
 import { useDispatch, useSelector } from "react-redux";
-import { loginAction } from "../../redux/action/action";
+import {getUserById, loginAction} from "../../redux/action/userAction";
 import { Container, FlexBox } from "../../App.Styled";
 import SideBar from "./components/SideBar";
 import { Outlet } from "react-router-dom";
 import { Typography } from "@mui/material";
 
 export default function Profile() {
-  return (
+    const userData = useSelector(state => state.UserReducer.profile);
+
+    console.log(userData, "Fffffff")
+
+    const dispatch = useDispatch();
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    useEffect(() => {
+        dispatch(getUserById(user.id));
+
+    }, [])
+
+    return (
     <Layout>
       <Container margin="52px 166px">
        <Typography fontSize={"4vw"} textAlign={"center"} margin={"30px 0"}>My account</Typography> 

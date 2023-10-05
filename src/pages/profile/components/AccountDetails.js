@@ -6,21 +6,21 @@ import { FlexBox, FlexColumn } from "../../../App.Styled";
 import { StyledInputProfile } from "../Profile.Styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getUserById } from "../../../redux/action/action";
+import {getUserById, updateUserAction} from "../../../redux/action/userAction";
 
 const AccountDetails = () => {
+  const userData = useSelector(state => state?.UserReducer?.profile);
+  const isLoading = useSelector(state => state?.UserReducer?.loading);
   const dispatch = useDispatch();
-  const user = JSON.parse(localStorage.getItem("user"));
-  const userData = useSelector(state => state.UserReducer.profile);
-  const isLoading = useSelector(state => state.UserReducer.loading);
+  const id = JSON.parse(localStorage.getItem("user")).id;
 
-  console.log(userData, "userData");
+  const handleSubmit = (values) => {
+    dispatch(updateUserAction(id, values))
+  }
 
-  useEffect(() => {
-    dispatch(getUserById(user.id))
-   
-  }, [])
-  
+  console.log("image", userData)
+
+
   return (
     <div style={{ width:"60%" }}>
 
@@ -34,13 +34,14 @@ const AccountDetails = () => {
         initialValues={{
           first_name: "",
           last_name: "",
-          user_name: userData.name,
-          email: userData.email,
+          user_name: userData?.name,
+          email: userData?.email,
           old_password: "",
           new_password: "",
           reset_password: "",
+          image: localStorage.getItem("image"),
         }}
-        onSubmit={() => console.log("vaild")}
+        onSubmit={handleSubmit}
       >
         {({ errors, handleSubmit, isSubmitting, setSubmitting, touched }) => (
           <Form>
@@ -134,7 +135,7 @@ const AccountDetails = () => {
               </Typography>
             </FlexColumn>
 
-            <Button text="Submit" variant="contained">Submit</Button>
+            <Button text="Submit"  type={"submit"} variant="contained">Submit</Button>
           </Form>
         )}
       </Formik>  }

@@ -8,7 +8,7 @@ import {
   USER_REGISTER_FAILED,
   GET_USER_START,
   GET_USER_SUCCESS,
-  GET_USER_FAILED,
+  GET_USER_FAILED, UPDATE_USER_START, UPDATE_USER_SUCCESS, UPDATE_USER_FAILED,
 } from "../types/Types";
 
 export const loginAction = (userData, navigate) => {
@@ -74,7 +74,7 @@ export const getUserById = (id) => {
 
     try {
       const response = await axios.get(
-        `https://e-commerce-api-fylh.onrender.com/api/user/${id}`
+        `https://e-commerce-api-dev.onrender.com/api/user/${id}`
       );
 
       dispatch({
@@ -89,3 +89,28 @@ export const getUserById = (id) => {
     }
   };
 };
+
+
+export const updateUserAction = (id, values) => {
+  return async (dispatch) => {
+    dispatch({
+      type: UPDATE_USER_START,
+    });
+
+    try {
+      const response = await axios.put(`https://e-commerce-api-fylh.onrender.com/api/user/update/${id}`, values);
+
+      dispatch({
+        type: UPDATE_USER_SUCCESS,
+        payload: response.data,
+      });
+
+    } catch (error) {
+      dispatch({
+        type: UPDATE_USER_FAILED,
+        payload: error.response.data.error,
+      });
+    }
+  };
+};
+

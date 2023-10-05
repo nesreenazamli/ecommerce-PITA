@@ -8,7 +8,7 @@ export default function Dashboard() {
 
   return (
     <FlexColumn>
-    <Typography margin={"20px 0"}>Hello {user.name}</Typography>
+    <Typography margin={"20px 0"}>Hello {user?.name}</Typography>
     <Typography>
     From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.</Typography>        
     </FlexColumn>

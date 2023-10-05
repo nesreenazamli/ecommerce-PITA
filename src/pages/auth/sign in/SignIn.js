@@ -14,7 +14,7 @@ import AuthLayout from "../AuthLayout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {loginAction} from "../../../redux/action/action";
+import {loginAction} from "../../../redux/action/userAction";
 
 
 function SignIn() {

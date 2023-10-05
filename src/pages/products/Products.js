@@ -68,6 +68,7 @@ function Products(props) {
           <StyledProductContainer>
             {allproducts.map((item) => (
               <ProductCard
+                product={item}
                 id={item.id}
                 productName={item.name}
                 rate={item.rate}

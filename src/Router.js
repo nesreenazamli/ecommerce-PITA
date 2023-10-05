@@ -10,6 +10,7 @@ import AccountDetails from "./pages/profile/components/AccountDetails";
 import Orders from "./pages/profile/components/Orders";
 import Dashboard from "./pages/profile/components/Dashboard";
 import Categories from "./pages/categories/Categories";
+import Cart from "./pages/cart page/Cart";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/login" element={<SignIn />}></Route>
       <Route path="/register" element={<Register />}></Route>
       <Route path="/products" element={<Products />}></Route>
+      <Route path="/cart" element={<Cart />}></Route>
       <Route path="/category" element={<Categories />}></Route>
       <Route path="/product/:id" element={<Product />} />
       <Route path="/profile" element={<Profile />}>

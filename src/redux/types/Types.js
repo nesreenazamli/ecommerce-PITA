@@ -1,3 +1,5 @@
+// user Types
+
 export const USER_LOGIN_START = "USER_LOGIN_START";
 export const USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS";
 export const USER_LOGIN_FAILED = "USER_LOGIN_FAILED";
@@ -9,3 +11,37 @@ export const USER_REGISTER_FAILED = "USER_REGISTER_FAILED";
 export const GET_USER_START =  "GET_USER_START";
 export const GET_USER_SUCCESS =  "GET_USER_SUCCESS";
 export const GET_USER_FAILED =  "GET_USER_FAILED";
+
+
+export const UPDATE_USER_START =  "UPDATE_USER_START";
+export const UPDATE_USER_SUCCESS =  "UPDATE_USER_SUCCESS";
+export const UPDATE_USER_FAILED =  "UPDATE_USER_FAILED";
+
+//cart types
+
+export const ADD_TO_CART = "ADD_TO_CART"
+
+export const INCREASE_ITEMS = "INCREASE_ITEMS"
+export const DECREASE_ITEMS = "DECREASE_ITEMS"
+
+
+
+
+
+
+
+
+
+
+
+
+//
+// export const ADD_TO_CART = "ADD_TO_CART";
+//
+// export const INCREASE_COUNT = "INCREASE_COUNT";
+//
+// export const DECREASE_COUNT = "DECREASE_COUNT";
+//
+// export const DELETE_CART_ITEM = "DELETE_CART_ITEM";
+//
+// export const RESET_CART = "RESET_CART";

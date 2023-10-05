@@ -29,6 +29,11 @@ export const GlobalStyle = createGlobalStyle`
     }
 
   }
+
+  .MuiTable-root {
+    margin: 52px 0;
+
+  }
   
 
   //  MUI styling
@@ -86,7 +91,7 @@ export const StyledImage = styled.img`
   
   
 `
-export const StyledDel = styled("del")`
+export const StyledDel = styled.del`
   color: #A7A7A7;
   margin: 0 5px;
 `

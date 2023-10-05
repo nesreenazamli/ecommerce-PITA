@@ -1,7 +1,7 @@
 import {
   GET_USER_FAILED,
   GET_USER_START,
-  GET_USER_SUCCESS,
+  GET_USER_SUCCESS, UPDATE_USER_FAILED, UPDATE_USER_START, UPDATE_USER_SUCCESS,
   USER_LOGIN_FAILED,
   USER_LOGIN_START,
   USER_LOGIN_SUCCESS,
@@ -13,7 +13,7 @@ import {
 export const UserReducer = (
   initialState = {
     user: {},
-    profile:{},
+    profile: {},
     error: "",
     loading: false,
     success: false,
@@ -65,6 +65,23 @@ export const UserReducer = (
         success: false,
         error: action.payload,
       };
+    case UPDATE_USER_START:
+      return {
+        loading: true,
+      };
+    case UPDATE_USER_SUCCESS:
+      return {
+        loading: false,
+        profile: action.payload,
+        success: true,
+      };
+    case UPDATE_USER_FAILED:
+      return {
+        loading: false,
+        success: false,
+        error: action.payload,
+      };
+
     default:
       return initialState;
   }
